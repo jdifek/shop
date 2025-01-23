@@ -1,4 +1,5 @@
-import Header from '@/components/layout/Header'
+import Header from '@/components/Header'
+import { CartProvider } from '@/helpers/context/CartContext'
 import type { Metadata } from 'next'
 import { Nunito, Quicksand } from 'next/font/google'
 import './globals.css'
@@ -24,13 +25,15 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang='en'>
-			<body
-				className={`${nunitoSans.variable} ${quicksandSans.variable} antialiased`}
-			>
-				<Header />
-				<main className='heading-section'>{children}</main>
-			</body>
-		</html>
+		<CartProvider>
+			<html lang='en'>
+				<body
+					className={`${nunitoSans.variable} ${quicksandSans.variable} antialiased`}
+				>
+					<Header />
+					<main className='heading-section'>{children}</main>
+				</body>
+			</html>
+		</CartProvider>
 	)
 }

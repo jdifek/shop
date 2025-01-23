@@ -1,4 +1,6 @@
 import Image from 'next/image'
+import Link from 'next/link'
+import { TbExternalLink } from 'react-icons/tb'
 import { Product } from '../utils/mockData'
 
 interface ProductCardProps {
@@ -22,6 +24,14 @@ const ProductCard = ({ product }: ProductCardProps) => {
 				<p className='text-gray-700 font-bold'>Price: ${product.price}</p>
 				<p className='text-gray-500 text-sm'>Category: {product.category}</p>
 				<p className='text-gray-500 text-sm'>Type: {product.type}</p>
+				<div className='mt-4'>
+					<Link href={`/product/${product.id}`}>
+						<button className='px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg flex items-center space-x-2'>
+							<span>Details</span>
+							<TbExternalLink />
+						</button>
+					</Link>
+				</div>
 			</div>
 		</div>
 	)
