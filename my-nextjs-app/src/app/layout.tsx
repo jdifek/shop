@@ -1,7 +1,7 @@
-import Header from '@/components/Header'
 import { CartProvider } from '@/helpers/context/CartContext'
 import type { Metadata } from 'next'
 import { Nunito, Quicksand } from 'next/font/google'
+import ClientLayout from './client-layout'
 import './globals.css'
 
 const nunitoSans = Nunito({
@@ -30,8 +30,7 @@ export default function RootLayout({
 				<body
 					className={`${nunitoSans.variable} ${quicksandSans.variable} antialiased`}
 				>
-					<Header />
-					<main className='heading-section'>{children}</main>
+					<ClientLayout>{children}</ClientLayout>
 				</body>
 			</html>
 		</CartProvider>

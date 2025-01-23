@@ -6,7 +6,7 @@ import { FaShoppingCart } from 'react-icons/fa'
 import UserMenu from './ui/UserMenu'
 
 const Header = () => {
-	const isAuth = Boolean(true)
+	const isAuth = Boolean(false)
 	const { cart } = useCart()
 
 	console.log(cart)
