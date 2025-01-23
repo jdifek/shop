@@ -41,7 +41,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
 						}}
 						className='rounded-lg overflow-hidden shadow-lg'
 					>
-						{product.images.map((image, index) => (
+						{product.images?.map((image, index) => (
 							<SwiperSlide key={index}>
 								<div className='relative w-full h-60 aspect-square'>
 									<Image
